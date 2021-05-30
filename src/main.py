@@ -34,7 +34,7 @@ def tweet():
     print('Tweet has been sent! See you in 24h.')
 
 
-# Calculates the amount of time left (in minutes) before 12am 
+# Calculates the amount of time left (in minutes) before 12am
 def time_left():
     time_delta = datetime.combine(
         datetime.now().date() + timedelta(days=1), datetime.strptime("0000", "%H%M").time()
@@ -55,6 +55,9 @@ try:
         schedule.run_pending()
         time.sleep(1)
 # Catch TweepError 187 and proceed accordingly.
+# If upon execution the program catches error code 401, proceed accordingly
 except tweepy.TweepError as err:
     if err.api_code == 187:
         print('Duplicate tweet detected. Please wait 24 hours before executing again, or just delete the newest tweet.')
+    if err.api_code == 401:
+        print('Error 401: Unauthorized. Please make sure your keys/credentials are correct and try again.')
