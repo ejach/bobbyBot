@@ -1,5 +1,6 @@
+import math
 import os
-from datetime import date
+from datetime import date, datetime, timedelta
 import time
 
 import schedule
@@ -33,8 +34,19 @@ def tweet():
     print('Tweet has been sent! See you in 24h.')
 
 
+# Calculates the amount of time left (in minutes) before 12am 
+def time_left():
+    time_delta = datetime.combine(
+        datetime.now().date() + timedelta(days=1), datetime.strptime("0000", "%H%M").time()
+    ) - datetime.now()
+    s = time_delta.seconds / 60
+    return math.trunc(s)
+
+
 # Every day at 12am, tweet
 schedule.every().day.at("00:00").do(tweet)
+# Informs the user upon running the script how many minutes are left before the next tweet is sent
+print('There is {0} minutes until the next tweet is sent. Sit tight!'.format(time_left()))
 
 # Infinite loop, tweets every day, rest for 24 hours until the next day.
 # If executed twice within the 24 hour interval, it will notify the user how to proceed.
