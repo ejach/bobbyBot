@@ -23,6 +23,16 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 
+# Checks if the credentials entered are correct
+def authenticate():
+    if not api.verify_credentials():
+        print('Authentication: FAILED')
+        return False
+    else:
+        print('Authentication: OK')
+        return True
+
+
 def tweet():
     # BOBBY was released on February 23rd, 2021
     f_date = date(2021, 3, 23)
@@ -45,12 +55,13 @@ def time_left():
 
 # Every day at 12am, tweet
 schedule.every().day.at("00:00").do(tweet)
-# Informs the user upon running the script how many minutes are left before the next tweet is sent
-print('There is {0} minutes until the next tweet is sent. Sit tight!'.format(time_left()))
 
 # Infinite loop, tweets every day, rest for 24 hours until the next day.
 # If executed twice within the 24 hour interval, it will notify the user how to proceed.
 try:
+    # Informs the user upon running the script how many minutes are left before the next tweet is sent
+    print('There is {0} minutes until the next tweet is sent. Sit tight!'.format(time_left())) if authenticate() else \
+        exit()
     while True:
         schedule.run_pending()
         time.sleep(1)
