@@ -4,7 +4,7 @@
 [![PyPI](https://img.shields.io/pypi/v/tweepy?label=tweepy&style=flat-square)](https://pypi.org/project/tweepy/)
 [![PyPI](https://img.shields.io/pypi/v/python-dotenv?label=python-dotenv&style=flat-square)](https://pypi.org/project/python-dotenv/)
 
-A simple Twitter bot that tweets every 24 hours the amount of time Bobby Schmurda has been released from prison and has **not** released a song.
+A simple Twitter bot that tweets every 24 hours the amount of time Bobby Shmurda has been released from prison and has **not** released a song.
 
 ## How to install
 
