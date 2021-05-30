@@ -27,7 +27,7 @@ f_date = date(2021, 3, 23)
 l_date = date.today()
 delta = l_date - f_date
 
-# Infinite loop, tweet every day rest for 24 hours until the next day.
+# Infinite loop, tweets every day, rest for 24 hours until the next day.
 # If executed twice within the 24 hour interval, it will notify the user how to proceed.
 try:
     while True:
