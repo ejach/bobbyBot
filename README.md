@@ -9,7 +9,7 @@ A simple Twitter bot that tweets every 24 hours the amount of time Bobby Schmurd
 ## How to install
 
 - Clone the repository
-- Install the requirements using `python3 pip install -r requirements.txt`
+- Install the requirements using `pip3 install -r requirements.txt`
 - Edit the `.env` file with your twitter tokens and API keys ([reference](https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api))
 - Start the program by running `python3 main.py`
 - Go crazy
