@@ -1,11 +1,10 @@
 import os
-import time as t
-import tweepy
 from datetime import date
-from dotenv import load_dotenv
+import time
 
-# Interval for every 24 hours
-INTERVAL = 60 * 60 * 24
+import schedule
+import tweepy
+from dotenv import load_dotenv
 
 # Loads the .env file for the credentials
 load_dotenv()
@@ -22,20 +21,27 @@ auth.set_access_token(access_token, access_token_secret)
 # Create API object
 api = tweepy.API(auth)
 
-# BOBBY was released on February 23rd, 2021
-f_date = date(2021, 3, 23)
-l_date = date.today()
-delta = l_date - f_date
+
+def tweet():
+    # BOBBY was released on February 23rd, 2021
+    f_date = date(2021, 3, 23)
+    l_date = date.today()
+    delta = l_date - f_date
+    api.update_status(
+        "It has been {0} days since Bobby Shmurda has been out of prison and NOT released a song.".format(
+            delta.days))
+    print('Tweet has been sent! See you in 24h.')
+
+
+# Every day at 12am, tweet
+schedule.every().day.at("00:00").do(tweet)
 
 # Infinite loop, tweets every day, rest for 24 hours until the next day.
 # If executed twice within the 24 hour interval, it will notify the user how to proceed.
 try:
     while True:
-        api.update_status(
-            "It has been {0} days since Bobby Shmurda has been out of prison and NOT released a song.".format(
-                delta.days))
-        print('Tweet has been sent! See you in 24h.')
-        t.sleep(INTERVAL)
+        schedule.run_pending()
+        time.sleep(1)
 # Catch TweepError 187 and proceed accordingly.
 except tweepy.TweepError as err:
     if err.api_code == 187:
