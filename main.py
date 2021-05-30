@@ -32,7 +32,7 @@ delta = l_date - f_date
 try:
     while True:
         api.update_status(
-            "It has been {0} days since Bobby Schmurda has been out of prison and NOT released a song.".format(
+            "It has been {0} days since Bobby Shmurda has been out of prison and NOT released a song.".format(
                 delta.days))
         print('Tweet has been sent! See you in 24h.')
         t.sleep(INTERVAL)
