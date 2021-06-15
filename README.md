@@ -2,9 +2,7 @@
 
 [![Twitter Badge](https://img.shields.io/badge/-@bobbyBot17-00acee?style=flat-square&logo=Twitter&logoColor=white)](https://twitter.com/intent/follow?screen_name=bobbyBot17 "Follow on Twitter")
 [![Docker](https://img.shields.io/docker/v/ejach/bobbybot?logo=docker&label=version&style=flat-square)](https://hub.docker.com/r/ejach/bobbybot)
-[![PyPI](https://img.shields.io/pypi/v/tweepy?label=tweepy&style=flat-square)](https://pypi.org/project/tweepy/)
-[![PyPI](https://img.shields.io/pypi/v/python-dotenv?label=python-dotenv&style=flat-square)](https://pypi.org/project/python-dotenv/)
-[![PyPI](https://img.shields.io/pypi/v/schedule?label=schedule&style=flat-square)](https://pypi.org/project/schedule/)
+[![PyPI](https://img.shields.io/pypi/v/tweepy?logo=python&label=tweepy&style=flat-square&color=FFD43B)](https://pypi.org/project/tweepy/)
 
 
 A simple Twitter bot that tweets every 24 hours the amount of time Bobby Shmurda has been released from prison and has **not** released a song.
