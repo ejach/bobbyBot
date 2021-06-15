@@ -1,4 +1,4 @@
-# bobbyBot <a href="#"><img src="https://pbs.twimg.com/profile_images/1398790979008741378/APSM1-xf_400x400.jpg" width="5%"></img></a>
+# bobbyBot 🤖
 
 [![Twitter Badge](https://img.shields.io/badge/-@bobbyBot17-00acee?style=flat-square&logo=Twitter&logoColor=white)](https://twitter.com/intent/follow?screen_name=bobbyBot17 "Follow on Twitter")
 [![Docker](https://img.shields.io/docker/v/ejach/bobbybot?logo=docker&label=version&style=flat-square)](https://hub.docker.com/r/ejach/bobbybot)
