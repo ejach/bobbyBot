@@ -2,6 +2,7 @@
 
 [![Twitter Badge](https://img.shields.io/badge/-@bobbyBot17-00acee?style=flat-square&logo=Twitter&logoColor=white)](https://twitter.com/intent/follow?screen_name=bobbyBot17 "Follow on Twitter")
 [![Docker](https://img.shields.io/docker/v/ejach/bobbybot?logo=docker&label=version&style=flat-square)](https://hub.docker.com/r/ejach/bobbybot)
+[![Docker](https://img.shields.io/docker/cloud/build/ejach/bobbybot?logo=docker&style=flat-square)](https://hub.docker.com/r/ejach/bobbybot/builds)
 [![PyPI](https://img.shields.io/pypi/v/tweepy?logo=python&label=tweepy&style=flat-square&color=FFD43B)](https://pypi.org/project/tweepy/)
 
 
