@@ -9,9 +9,6 @@ from dotenv import load_dotenv
 # Loads the .env file for the credentials
 load_dotenv()
 
-# Time of day set in the .env file
-tweet_time = environ.get('time_of_day')
-
 # Credentials set in the .env file
 consumer_key = environ.get('consumer_key')
 consumer_secret = environ.get('consumer_secret')
@@ -55,7 +52,7 @@ def time_left():
 
 
 # Every day at 12am, tweet
-every().day.at(str(tweet_time)).do(tweet)
+every().day.at('00:00').do(tweet)
 
 # Infinite loop, tweets every day, rest for 24 hours until the next day.
 # If executed twice within the 24 hour interval, it will notify the user how to proceed.
