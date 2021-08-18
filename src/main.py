@@ -56,7 +56,7 @@ def time_left():
 
 
 # Every day at 12am, tweet
-every().day.at(tweet_time).do(tweet)
+every().day.at(str(tweet_time)).do(tweet)
 
 # Infinite loop, tweets every day, rest for 24 hours until the next day.
 # If executed twice within the 24 hour interval, it will notify the user how to proceed.
