@@ -47,9 +47,8 @@ def tweet():
 
 # Calculates the amount of time left (in minutes) before the time that was set
 def time_left():
-    strip_time = tweet_time.replace(':', '')
     time_delta = datetime.combine(
-        datetime.now().date() + timedelta(days=1), datetime.strptime(strip_time, "%H%M").time()
+        datetime.now().date() + timedelta(days=1), datetime.strptime("0000", "%H%M").time()
     ) - datetime.now()
     s = time_delta.seconds / 60
     return trunc(s)
